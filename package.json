@@ -1,5 +1,5 @@
 {
-  "name": "hoteles",
+  "name": "colegios",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,8 @@
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
     "node": "^24.2.0",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

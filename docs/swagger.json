@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Centros Educativos de Valencia",
+    "version": "1.0.0",
+    "description": "API para consultar información de centros educativos: por ID, nombre, municipio y régimen."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/tablas": {
+      "get": {
+        "summary": "Obtener todos los centros educativos",
+        "tags": ["Tablas"],
+        "responses": {
+          "200": {
+            "description": "Lista de centros educativos"
+          }
+        }
+      }
+    },
+    "/tablas/id/{id}": {
+      "get": {
+        "summary": "Obtener un centro educativo por ID",
+        "tags": ["Tablas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID del centro",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Centro encontrado"
+          },
+          "404": {
+            "description": "Centro no encontrado"
+          }
+        }
+      }
+    },
+    "/tablas/byname": {
+      "get": {
+        "summary": "Buscar centros por nombre exacto (campo dlibre)",
+        "tags": ["Tablas"],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "required": true,
+            "description": "Nombre exacto del centro",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros encontrados"
+          },
+          "404": {
+            "description": "No se encontraron coincidencias"
+          }
+        }
+      }
+    },
+    "/tablas/municipio/{municipio}": {
+      "get": {
+        "summary": "Buscar centros por municipio exacto",
+        "tags": ["Tablas"],
+        "parameters": [
+          {
+            "name": "municipio",
+            "in": "path",
+            "required": true,
+            "description": "Nombre exacto del municipio",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros encontrados"
+          },
+          "404": {
+            "description": "No se encontraron coincidencias"
+          }
+        }
+      }
+    },
+    "/tablas/regimen/{regimen}": {
+      "get": {
+        "summary": "Buscar centros por régimen educativo (público, privado, concertado)",
+        "tags": ["Tablas"],
+        "parameters": [
+          {
+            "name": "regimen",
+            "in": "path",
+            "required": true,
+            "description": "Tipo de régimen",
+            "schema": {
+              "type": "string",
+              "enum": ["público", "privado", "concertado"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros encontrados"
+          },
+          "404": {
+            "description": "No se encontraron coincidencias"
+          }
+        }
+      }
+    }
+  }
+}
