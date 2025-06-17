@@ -24,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT
     }
   }, {
-    tableName: "mitabla",    // <- Muy importante: nombre real de la tabla
-    timestamps: false        // <- Porque no hay columnas createdAt/updatedAt
+    tableName: "mitabla",    // Muy importante el nombre real de la tabla sino no conecta y se vuelve loco
+    timestamps: false        
   });
 
   return Tabla;
