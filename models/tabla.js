@@ -1,44 +1,32 @@
-
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define("Tabla", {
-
-
-    id:{
-      type: DataTypes.INTEGER,
-      primaryKey: true,       // Clave primaria
-      autoIncrement: true,    // Se incrementa automáticamente
-      allowNull: false,
-    },
-    Geo_Point:{ 
-      type:DataTypes.STRING,
+  const Tabla = sequelize.define("Tabla", {
+    id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,
       allowNull: false
+    },
+    Geo_Point: {
+      type: DataTypes.TEXT
     },
     municipio_: {
-      type:DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.TEXT
     },
     dlibre: {
-        type:DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.TEXT
     },
     dgenerica_: {
-        type:DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.TEXT
     },
     regimen: {
-        type:DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.TEXT
     },
-    direccion:{
-        type:DataTypes.STRING,
-        allowNull: false
+    direccion: {
+      type: DataTypes.TEXT
     }
-
-
-
+  }, {
+    tableName: "mitabla",    // <- Muy importante: nombre real de la tabla
+    timestamps: false        // <- Porque no hay columnas createdAt/updatedAt
   });
-
-
 
   return Tabla;
 };
