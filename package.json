@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -19,5 +19,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beatriz-Valencia/Proyecto_Colegios.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Beatriz-Valencia/Proyecto_Colegios/issues"
+  },
+  "homepage": "https://github.com/Beatriz-Valencia/Proyecto_Colegios#readme"
 }
