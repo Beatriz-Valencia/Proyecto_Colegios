@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Carlos123",
+    "password": "Pass",
     "database": "TablaColegios",
     "host": "127.0.0.1",
     "dialect": "mysql"
